@@ -4,6 +4,12 @@ import re
 with open("index2.html", "r") as f:
     doc = BeautifulSoup(f, "html.parser")
 
-tags = doc.find_all(text=re.compile("\$.*"), limit=1)
+tags = doc.find_all("input", type="text")
 for tag in tags:
-    print(tag.strip())
+    tag['placeholder'] = "Changed value!"
+
+with open("changed.html", "w") as file:
+    file.write(str(doc))
+
+
+
