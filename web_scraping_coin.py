@@ -10,6 +10,10 @@ doc = BeautifulSoup(result, "html.parser")
 tbody = doc.tbody
 trs = tbody.contents
 
-print(list(trs[0].children))
+prices = {}
 
+for tr in trs:
+    name, price = tr.contents[2:4]
+    print(name.find_all("span") )
+    print()
 
