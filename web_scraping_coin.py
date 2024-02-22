@@ -10,6 +10,6 @@ doc = BeautifulSoup(result, "html.parser")
 tbody = doc.tbody
 trs = tbody.contents
 
-print(trs[0].parent)
+print(list(trs[0].children))
 
 
